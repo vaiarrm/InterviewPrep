@@ -24,6 +24,9 @@ hs_err_pid*
 
 # STS
 .metadata/
+**/**/.classpath
+**/**/.project
+**/**/.settings/
 
 #Other Stuff
 E-Books/
