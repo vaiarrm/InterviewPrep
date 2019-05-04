@@ -3,8 +3,7 @@
  */
 package com.algo.java.easy.tree;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author vaibhavsharma
@@ -54,7 +53,7 @@ public class TreeNodeTraversalUtil {
 		return list;
 	}
 	
-	public static List<Integer> inOrderTraversal(TreeNode node, List<Integer> list) {
+	private static List<Integer> inOrderTraversal(TreeNode node, List<Integer> list) {
 		if (node == null) {
 			return list;
 		}
@@ -65,6 +64,24 @@ public class TreeNodeTraversalUtil {
 		
 		return list;
 	}
+	
+	public static List<Integer> levelOrderTraversal(TreeNode root){
+		List<Integer> list = new ArrayList<Integer>();
+		if (root == null) return list;
+		
+		Queue<TreeNode> queue = new ArrayDeque<TreeNode>();
+		queue.add(root);
+		
+		while(!queue.isEmpty()) {
+			TreeNode node = queue.poll();
+			if (node == null) continue;
+			list.add(node.val);
+			if (node.left != null) queue.add(node.left);
+			if (node.right != null) queue.add(node.right);
+		}
+		return list;
+	}
+	
 	
 	public static void printList(List<Integer> list) {
 		for (Integer elem: list) {
