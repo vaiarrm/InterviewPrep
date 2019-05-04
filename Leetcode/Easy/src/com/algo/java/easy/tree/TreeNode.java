@@ -53,8 +53,11 @@ public class TreeNode {
 		List<Integer> postOrderlist = TreeNodeTraversalUtil.postOrderTraversal(root);
 		TreeNodeTraversalUtil.printList(postOrderlist);
 		
-		List<Integer> inOrderlist = TreeNodeTraversalUtil.postOrderTraversal(root);
+		List<Integer> inOrderlist = TreeNodeTraversalUtil.inOrderTraversal(root);
 		TreeNodeTraversalUtil.printList(inOrderlist);
+		
+		List<Integer> levelOrderList = TreeNodeTraversalUtil.levelOrderTraversal(root);
+		TreeNodeTraversalUtil.printList(levelOrderList);
 	}
 
 }
